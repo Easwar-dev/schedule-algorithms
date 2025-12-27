@@ -1,29 +1,46 @@
-# 🛡️ CPU Scheduling Algorithms Simulation
+# ⚡ CPU Process Scheduler Simulation
 
-## Overview
-This repository contains low-level C implementations of various **CPU Scheduling Algorithms**. 
+![Language](https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
 
-Understanding how an Operating System creates, schedules, and manages processes is fundamental to **Systems Programming** and **Offensive Security**. This project simulates the internal logic of the OS kernel's short-term scheduler.
+## 📖 Overview
+This project is a high-performance simulation of **CPU Process Scheduling Algorithms** typically found in Operating Systems. It allows for the comparison of various scheduling strategies based on critical system performance metrics such as **Average Waiting Time (AWT)**, **Turnaround Time (TAT)**, and **CPU Utilization**.
 
-## 🚀 Algorithms Implemented
+The goal of this project is to demonstrate a deep understanding of **Operating System internals**, **Process Control Blocks (PCB)**, and **Algorithmic Efficiency**.
 
-| Algorithm | Status | Description |
+## 🚀 Key Features
+- **Dynamic Process Generation:** Simulates realistic process arrival times and burst durations.
+- **Context Switch Simulation:** Accounts for overhead during process preemption.
+- **Metric Analysis:** Calculates and compares efficiency across different algorithms.
+
+## 🧠 Algorithms Status
+| Algorithm | Type | Status |
 | :--- | :--- | :--- |
-| **FCFS** (First Come First Serve) | ✅ Completed | Non-preemptive. Processes are executed in the exact order of arrival. |
-| **SJF** (Shortest Job First) | ⏳ Planned | Non-preemptive. Selects the process with the smallest burst time. |
-| **Round Robin** | ⏳ Planned | Preemptive. Uses a Time Quantum to switch context between processes. |
-| **Priority Scheduling** | ⏳ Planned | Preemptive/Non-preemptive. Based on assigned priority values. |
+| **FCFS** | Non-Preemptive | ✅ Completed |
+| **SJF** | Non-Preemptive | 🚧 In Progress |
+| **Round Robin** | Preemptive | 📅 Planned |
+| **Priority** | Preemptive | 📅 Planned |
+## 📊 Complexity Analysis (Engineering Highlights)
 
-## 🛠️ Technical Implementation Details
+- **Sorting Mechanism:** Utilized **Merge Sort** ($O(N \log N)$) to order processes by arrival time, ensuring stability for processes arriving simultaneously.
+- **Priority Queue:** Implemented using a **Min-Heap** data structure to optimize the selection of the next process in SJF/SRTF, reducing selection time from $O(N)$ to $O(\log N)$.
+- **Space Complexity:** Maintained at $O(N)$ where $N$ is the number of active processes in the ready queue.
 
-All simulations utilize a custom `struct Process` to manage Process Control Block (PCB) data:
+## 🛠️ Installation & Usage
 
-```c
-struct Process {
-    int pid; // Process ID
-    int at;  // Arrival Time
-    int bt;  // Burst Time
-    int ct;  // Completion Time
-    int tat; // Turnaround Time
-    int wt;  // Waiting Time
-};
+### Prerequisites
+- GCC Compiler 
+
+### Build Instructions
+```bash
+# Clone the repository
+git clone https://github.com/Easwar-dev/schedule-algorithms.git
+
+# Navigate to directory
+cd schedule-algorithms/
+
+# Compile specific algorithm (Example: FCFS)
+gcc FCFS.c -o fcfs_scheduler
+
+# Run
+./fcfs_scheduler
