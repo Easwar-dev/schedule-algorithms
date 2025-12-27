@@ -20,7 +20,7 @@ The goal of this project is to demonstrate a deep understanding of **Operating S
 | **SJF** | Non-Preemptive | 🚧 In Progress |
 | **Round Robin** | Preemptive | 📅 Planned |
 | **Priority** | Preemptive | 📅 Planned |
-## 📊 Complexity Analysis (Engineering Highlights)
+## 📊 Complexity Analysis
 
 - **Sorting Mechanism:** Utilized **Merge Sort** ($O(N \log N)$) to order processes by arrival time, ensuring stability for processes arriving simultaneously.
 - **Priority Queue:** Implemented using a **Min-Heap** data structure to optimize the selection of the next process in SJF/SRTF, reducing selection time from $O(N)$ to $O(\log N)$.
