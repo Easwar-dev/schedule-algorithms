@@ -17,8 +17,8 @@ The goal of this project is to demonstrate a deep understanding of **Operating S
 | Algorithm | Type | Status |
 | :--- | :--- | :--- |
 | **FCFS** | Non-Preemptive | ✅ Completed |
-| **SJF** | Non-Preemptive | 🚧 In Progress |
-| **Round Robin** | Preemptive | 📅 Planned |
+| **SJF** | Non-Preemptive | ✅ Completed |
+| **Round Robin** | Preemptive | 🚧 In Progress |
 | **Priority** | Preemptive | 📅 Planned |
 ## 📊 Complexity Analysis
 
